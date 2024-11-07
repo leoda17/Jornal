@@ -1,13 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
+/* Estilos gerais */
 body {
     font-family: "Abril Fatface", serif;
     margin: 0;
     padding: 0;
-    background-color: #3e8b31; /* Cor de fundo ajustada */
+    background-color: #3e8b31; /* Cor de fundo para a seção de eventos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Banner de Divulgação */
+.banner {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(135deg, #f3f3f3 25%, #e1e1e1 25%, #e1e1e1 50%, #f3f3f3 50%, #f3f3f3 75%, #e1e1e1 75%, #e1e1e1 100%);
+    background-size: 56.57px 56.57px;
+    margin-top: 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.icons li {
+    display: inline-block;
+}
+
+.icons img {
+    width: 50px;
+    height: auto;
+}
+
+/* Cabeçalho de Eventos */
 header {
+    width: 100%;
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -29,12 +88,14 @@ h1 {
     font-size: 2em;
 }
 
+/* Container para seção de eventos */
 .container {
     width: 90%;
-    margin: auto;
+    margin: 20px auto;
     overflow: hidden;
 }
 
+/* Estilos dos eventos */
 .event {
     display: flex;
     flex-direction: row;
@@ -108,5 +169,21 @@ h1 {
     .event::before {
         left: 50%;
         transform: translateX(-50%) translateY(-50%); /* Centraliza o ícone acima da imagem */
+    }
+
+    .banner {
+        width: 95%;
+    }
+
+    .content h1 {
+        font-size: 2em;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
+
+    .icons img {
+        width: 40px;
     }
 }
