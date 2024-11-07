@@ -55,7 +55,7 @@ h1 {
     width: 100%; /* Ocupa toda a largura disponível */
 }
 
-.event p{
+.event p {
     margin-left: 20px; /* Ajusta a margem à esquerda */
 }
 
@@ -75,8 +75,34 @@ h1 {
 .event-img {
     margin-right: 20px; /* Adiciona margem à direita da imagem */
     border-radius: 10px;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
 }
 
 .event-details {
     flex: 1;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .event {
+        flex-direction: column;
+        text-align: center; /* Alinha o texto ao centro em dispositivos móveis */
+    }
+
+    .event p {
+        margin-left: 0; /* Remove a margem à esquerda em dispositivos móveis */
+    }
+
+    .event-img {
+        margin-right: 0; /* Remove a margem à direita em dispositivos móveis */
+        width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
+        height: auto;
+    }
+
+    .event::before {
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); /* Centraliza o ícone acima da imagem */
+    }
 }
