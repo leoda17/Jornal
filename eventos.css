@@ -4,11 +4,10 @@ body {
     font-family: "Abril Fatface", serif;
     margin: 0;
     padding: 0;
-    background-color: #3e8b31;
+    background-color: #3e8b31; /* Cor de fundo ajustada */
 }
 
 header {
-    background-image: url('brasao');
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -86,6 +85,11 @@ h1 {
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
     .event {
         flex-direction: column;
         text-align: center; /* Alinha o texto ao centro em dispositivos móveis */
