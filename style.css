@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-image: url('img/brasao\ 2.jpg');
+    background-image: url('img/brasao 2.jpg');
     background-size: cover; /* A imagem irá cobrir todo o cabeçalho */
     background-position: center; /* Centraliza a imagem no cabeçalho */
     height: 300px; /* Ajuste a altura conforme necessário */
@@ -128,4 +128,33 @@ article h2 {
 .social-icons {
     display: flex;
     gap: 5px;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        height: 200px; /* Ajuste a altura para dispositivos móveis */
+    }
+    
+    .carousel-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .noticias-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .noticia {
+        width: calc(50% - 20px); /* Ajusta a largura das notícias para caber duas em uma linha */
+    }
+
+    nav {
+        flex-direction: column; /* Ajusta o menu de navegação para uma coluna em dispositivos móveis */
+    }
+
+    nav a {
+        padding: 10px 0;
+    }
 }
