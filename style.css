@@ -1,26 +1,46 @@
+/* Importação de fontes */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
+/* Estilos Globais */
 body {
     font-family: "Abril Fatface", serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #2190a6, #ad3a26); /* Gradiente suave entre cinza e vermelho vibrante */
+    color: #333; /* Cor do texto mais escuro para contraste */
 }
 
+/* Para o conteúdo de texto */
+h1, h2, h3, p {
+    color: #2c3e50; /* Cor de texto escuro para contraste */
+}
+
+/* Link de navegação */
+a {
+    color: #de7562; /* Cor vibrante para links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff4500; /* Cor mais escura ao passar o mouse */
+}
+
+
+/* Cabeçalho */
 header {
     background-image: url('img/brasao 2.jpg');
-    background-size: cover; /* A imagem irá cobrir todo o cabeçalho */
-    background-position: center; /* Centraliza a imagem no cabeçalho */
-    height: 300px; /* Ajuste a altura conforme necessário */
-    position: relative;
-    text-align: center;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    position: relative;
 }
 
 .header-content {
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhorar a legibilidade do texto */
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
     border-radius: 10px;
 }
@@ -30,12 +50,7 @@ h1 {
     font-size: 2em;
 }
 
-.carousel-container h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #333;
-}
-
+/* Navegação */
 nav {
     display: flex;
     justify-content: center;
@@ -52,12 +67,20 @@ nav a:hover {
     background-color: #555;
 }
 
+/* Carrossel de Destaque */
 .carousel-container {
     max-width: 800px;
     margin: 20px auto;
     overflow: hidden;
     position: relative;
-    background-color: #fff;
+    background-color: #333; /* Fundo preto para o container */
+    border-radius: 12px; /* Bordas arredondadas no container */
+}
+
+.carousel-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff; /* Cor do título em branco para contrastar com o fundo escuro */
 }
 
 .carousel {
@@ -67,16 +90,20 @@ nav a:hover {
 
 .carousel-item {
     min-width: 100%;
-    box-sizing: border-box;
     padding: 20px;
-    background-color: #e4e4e4;
-    border: 1px solid #ccc;
+    background-color: #b89090; /* Fundo mais escuro para os itens do carrossel */
+    border: 2px solid #444; /* Bordas suaves para os itens */
+    box-sizing: border-box;
+    border-radius: 8px; /* Bordas arredondadas nos itens do carrossel */
+    transition: transform 0.3s ease; /* Efeito de transição suave para hover ou interação */
 }
 
-article h2 {
-    color: #333;
+.carousel-item:hover {
+    transform: translateY(-5px); /* Leve elevação ao passar o mouse */
 }
 
+
+/* Animação do carrossel */
 @keyframes slide {
     0% { transform: translateX(0); }
     25% { transform: translateX(-100%); }
@@ -85,31 +112,80 @@ article h2 {
     100% { transform: translateX(0); }
 }
 
+/* Container de Notícias */
 .noticias-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    width: 80%;
+    height: 250px; /* Ajuste a altura conforme necessário */
     margin: 20px auto;
-    max-width: 800px;
+    position: relative;
+    border: none; /* Removendo a borda */
+    box-shadow: none; /* Removendo a sombra do contêiner */
+    background-color: transparent; /* Removendo o fundo */
 }
 
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+/* Notícias Individuais */
 .noticia {
-    width: 200px;
-    height: 200px;
-    margin: 10px;
+    min-width: 100%;  /* Pode ajustar esse valor para dispositivos menores */
     padding: 20px;
-    background-color: #e4e4f4;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #39339e;; /* Cor de fundo preta */
+    border: 2px solid #444; /* Cor de borda mais suave que o fundo */
     text-align: center;
-    border-radius: 0;
+    box-sizing: border-box;
+    transition: transform 0.4s ease-in-out;
+    border-radius: 12px; /* Bordas arredondadas */
 }
 
-.noticia h3,
+.noticia h3 {
+    color: #fff; /* Texto branco para contraste */
+    font-size: 1.5em;
+}
+
 .noticia p {
+    font-size: 1em;
+    color: #ccc; /* Texto mais suave (cinza claro) para contraste */
     margin: 0;
 }
 
+/* Botões de Navegação do Carrossel de Notícias */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+/* Banner de Redes Sociais */
 .social-banner {
     background-color: #333;
     color: white;
@@ -130,28 +206,23 @@ article h2 {
     gap: 5px;
 }
 
-/* Estilos para dispositivos móveis */
+/* Estilos Responsivos */
 @media (max-width: 768px) {
     header {
-        height: 200px; /* Ajuste a altura para dispositivos móveis */
-    }
-    
-    .carousel-container {
-        max-width: 100%;
-        padding: 0 10px;
+        height: 200px;
     }
 
-    .noticias-container {
+    .carousel-container, .noticias-container {
         max-width: 100%;
         padding: 0 10px;
     }
 
     .noticia {
-        width: calc(50% - 20px); /* Ajusta a largura das notícias para caber duas em uma linha */
+        width: calc(50% - 20px); /* Ajuste para exibir duas notícias por linha em dispositivos menores */
     }
 
     nav {
-        flex-direction: column; /* Ajusta o menu de navegação para uma coluna em dispositivos móveis */
+        flex-direction: column;
     }
 
     nav a {
